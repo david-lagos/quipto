@@ -1,0 +1,71 @@
+* {
+    font-family: "Helvetica", sans-serif;
+  }
+  
+  .modal {
+    background-color: rgba(0, 0, 0, 0.404);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal__dialog_investment {
+    width: 855px;
+    height: 357px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: grid;
+    /* flex-direction: column; */
+    padding: 25px;
+  }
+  
+  .modal-open {
+    display: grid;
+  }
+  .modal-investment-title {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .modal-investment-title b {
+    font-size: 20px;
+    font-weight: 500;
+    color: #28347d;
+  }
+  .contentInvest {
+    display: flex;
+  }
+  #tableInvestment {
+    display: block;
+    width: 30%;
+    /* border: 3px dashed pink; */
+    /* height: 55px; */
+  }
+  #tableInvestment th {
+    width: 45%;
+    padding-top: 38px;
+    margin: auto;
+    /* border: 1px dashed pink; */
+    text-align: center;
+  }
+  #tableInvestment th:nth-child(2){
+    padding-left: 6px;
+  }
+  
+  #tableInvestment td {
+    font-size: 32px;
+    text-align: center;
+    color: #28347d;
+  }
+  
+  
+  .graph {
+    width: 70%;
+    float: right;
+    /* overflow: hidden; */
+  }

@@ -1,0 +1,38 @@
+#chart,
+.chart-box {
+  padding-top: 4px;
+  padding-left: 10px;
+  background: transparent;
+  /* border: 1px solid #ddd; */
+  /* box-shadow: 0 22px 35px -16px rgb(0 0 0 / 10%); */
+}
+
+#one_week,
+#one_month,
+#one_year,
+#ytd,
+#all {
+  background: transparent;
+  color: #222;
+  border: 1px solid #e7e7e7;
+  border-bottom: 2px solid #ddd;
+  border-radius: 2px;
+  box-shadow: 0 22px 35px -16px rgb(0 0 0 / 10%);
+  padding: 4px 17px;
+}
+
+.toolbar {
+  margin: auto;
+}
+
+.apexcharts-toolbar {
+  position: absolute;
+  z-index: 11;
+  max-width: 176px;
+  text-align: right;
+  border-radius: 3px;
+  padding: 0px 6px 2px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

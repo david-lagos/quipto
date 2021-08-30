@@ -1,0 +1,72 @@
+* {
+  font-family: "Helvetica", sans-serif;
+}
+.modal {
+  background-color: rgba(0, 0, 0, 0.404);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__dialog_yield {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: grid;
+  /* flex-direction: column; */
+  padding: 25px;
+}
+
+.modal-open {
+  display: grid;
+}
+.modal-title {
+  font-size: 20px;
+  font-weight: 100;
+}
+.title {
+  display: inline-block;
+  height: auto;
+}
+
+.titleCloseBtn {
+  float: right;
+  width: 20px;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-top: 0;
+  margin-left: 9px;
+}
+
+.pair-title {
+  height: auto;
+  margin-top: 46px;
+  border: 1px solid #02a7f0;
+  border-radius: 8px;
+  text-align: center;
+
+}
+.pair-title h1 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.pair-title p {
+  margin: 9px;
+  text-align: left;
+}
+.content-container {
+  margin: 15px;
+}

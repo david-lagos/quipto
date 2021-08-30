@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+ margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+
+
+/*MENU STYLES (START)*/
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #F2F2F2;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+nav .logo{
+  color: #3B3B6B;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #430077;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li svg:hover,
+nav ul li a:hover{
+    color: #3B3B6B;
+}
+
+nav ul li a.active{    
+  color: #fff;
+  background: #430077;
+}
+
+nav ul li svg{
+    color:#7F7F7F;
+}
+
+
+nav .menu-btn i{
+  color: #3B3B6B;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+
+input[type="checkbox"]{
+  display: none;
+}
+
+/*MENU STYLES (END)*/
+.content{
+
+  position: absolute;
+  top: 20%;
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+
+
+
+/**********MY ACCOUNT STYLES (START)************/
+.my-account-container{
+    display: grid;
+    text-align: left;
+    /* margin-left: 100px; */
+    /* background-color: #F2F2F2; */
+    grid-template-columns: [first-column] auto [filter-column] 2fr [last-column];
+    grid-template-rows: [first-row] auto [growth-row] 2fr [last-row];
+    grid-column-gap: 15px;
+    grid-template-areas: 
+    "myAccount filter-myAccount"
+    "growth-info graphs-growth"
+    ;
+
+}
+.title-my-account{
+    grid-area:myAccount;
+    color: #3B3B6B;
+    /* border: 3px dashed pink; */
+    grid-column-start: first-column;
+    grid-column-end: filter-column;
+    grid-row-start: first-row;
+    grid-row-end: growth-row;
+    text-align: center;
+}
+.title-my-account h1{
+    font-size: 40px;
+}
+
+.filter-my-account{
+    display: flex; 
+    align-items: center;
+    grid-area: filter-myAccount;
+    grid-column-start: filter-column;
+    grid-column-end: last-column;
+    grid-row-start: first-row;
+    grid-row-end: growth-row;
+}
+
+#home_filter{
+    border: none;
+    outline:none;
+    /* background-color: #f2f2f2; */
+    color:#7F7F7F;
+    width: 20%;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.growth-info{
+    grid-area: growth-info;
+    grid-column-start: first-column;
+    grid-column-end: filter-column;
+    grid-row-start: growth-row;
+    grid-row-end: last-row;
+    text-align: center; 
+    /* border:3px dashed pink;*/
+}
+
+.growth-info h1{
+    font-size: 60px;
+}
+
+.growth-info h6{
+    font-size: 20px;
+
+}
+
+
+.graphs-growth{
+    display:grid;
+    grid-area: graphs-growth;
+    /* border:3px dashed pink; */
+    grid-column-start: filter-column;
+    grid-column-end: last-column;
+    grid-row-start: growth-row;
+    grid-row-end: last-row;
+    grid-template-columns: [first-column] 1.2fr [second-graph-column] 3fr [last-column];
+    grid-template-areas: 
+    "graph-1 table"
+}
+
+.graph-1{
+    grid-area: graph-1;
+    /* border:3px dashed pink; */
+    grid-column-start: first-column;
+    grid-column-end: second-graph-column;
+}
+
+
+.table-account{
+    grid-area: table;
+    /* border:3px dashed pink; */
+    grid-column-start:  second-graph-column;
+    grid-column-end: last-column;
+}
+.table-account h1{
+    font-size: 20px;
+    font-weight: 500;
+    color:#7F7F7F;
+}
+
+.table {
+    /* border-collapse: collapse; */
+    width: 85%;
+    text-align: justify;
+}
+table td:nth-child(3){
+    color: green;
+}
+.table tr :nth-child(4){
+    color:red;
+}
+.table td, .table th {
+    padding: .65rem;
+    color: #7F7F7F;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+
+/**********MY ACCOUNT STYLES (END)************/
+
+
+/**********MY INVESTMENTS STYLES (START)************/
+.investment-topDeals-container{
+    display:grid;
+ /* border: 3px dashed pink; */
+    grid-template-columns: [first-column] 1fr [second-column] 1fr [last-column];
+    grid-template-rows: auto;
+    grid-column-gap: 15px;
+    grid-template-areas: 
+        "myInvestmentContainer topDealsContainer"
+    ;
+}
+.my-investments-container{
+    /* border: 3px dashed pink; */
+    margin-top: 5%;
+    display: grid;
+    text-align: left;
+    /* background-color: #F2F2F2; */
+    grid-template-columns: [first-investments-column] auto [filter-investments-column] 2fr [last-investments-column];
+    grid-template-rows: [first-investments-row] auto [text-investments-row] auto [table-investments-row] 2fr [last-investments-row];
+    grid-column-gap: 15px;
+    grid-template-areas: 
+    "myInvestments filter-myInvestments"
+    "text text"
+    ;
+
+    grid-area: myInvestmentContainer;
+    grid-column-start: first-column;
+    grid-column-end: second-column;
+
+}
+.title-my-investments{
+    grid-area:myInvestments;
+    color: #3B3B6B;
+    /* border: 3px dashed pink; */
+    grid-column-start: first-investments-column;
+    grid-column-end: filter-investments-column;
+    grid-row-start: first-investments-row;
+    grid-row-end: text-investments-row;
+    text-align: center;
+}
+.title-my-investments h1{
+    font-size: 40px;
+}
+
+
+.filter-my-investments{
+    display: flex; 
+    align-items: center;
+    grid-area: filter-myInvestments;
+    grid-column-start: filter-investments-column;
+    grid-column-end: last-investments-column;
+    grid-row-start: first-investments-row;
+    grid-row-end: text-investments-row;
+    /* border: 3px dashed ; */
+}
+#home_filter_invest{
+    border: none;
+    outline:none;
+    /* background-color: #f2f2f2; */
+    color:#7F7F7F;
+    width: 90%;
+    font-size: 15px;
+    font-weight: 400;
+}
+.text-investments{
+    grid-area: text;
+    grid-column-start: first-investments-column;
+    grid-column-end: last-investments-investments-column;
+    grid-row-start: text-investments-row ;
+    grid-row-end: table-investments-row;
+    /* border: 3px dashed ; */
+}
+.text-investments h6{
+    color: #7F7F7F;
+    font-size:20px;
+    font-weight: 300;
+}
+
+.top-deals-container{
+    grid-area: topDealsContainer;
+    grid-column-start: second-column;
+    grid-column-end: last-column;
+
+    margin-top: 5%;
+    display: grid;
+    text-align: left;
+    /* background-color: #F2F2F2; */
+    grid-template-columns: [first-deals-column] auto [filter-deals-column] 2fr [last-deals-column];
+    grid-template-rows: [first-deals-row] auto [text-deals-row] auto [table-deals-row] 2fr [last-deals-row];
+    grid-column-gap: 15px;
+    grid-template-areas: 
+    "topDeals"
+    "text text"
+    ;
+
+}
+
+.title-top-deals{
+    grid-area:topDeals;
+    color: #3B3B6B;
+    /* border: 3px dashed pink; */
+    grid-column-start: first-deals-column;
+    grid-column-end: filter-deals-column;
+    grid-row-start: first-deals-row;
+    grid-row-end: text-deals-row;
+    text-align: center;
+}
+.title-top-deals h1{
+    font-size: 40px;
+}
+
+.text-top-deals{
+    grid-area: text;
+    grid-column-start: first-deals-column;
+    grid-column-end: last-deals-investments-column;
+    grid-row-start: text-deals-row ;
+    grid-row-end: table-deals-row;
+    /* border: 3px dashed ; */
+}
+.text-top-deals h6{
+    color: #7F7F7F;
+    font-size:20px;
+    font-weight: 300;
+}
+
+/**********MY INVESTMENTS STYLES (END)************/
+
+/***MEDIA QUERYES RESPONSIVE (START)****/
+
+
+@media (max-width: 1000px){
+    nav{
+      padding: 0 40px 0 50px;
+    }
+  }
+  @media (max-width: 920px) {
+    nav .menu-btn i{
+      display: block;
+    }
+    #click:checked ~ .menu-btn i:before{
+      content: "\f00d";
+    }
+    nav ul{
+      position: fixed;
+      top: 80px;
+      left: -100%;
+      background: #f2f2f2;
+      height: 100vh;
+      width: 100%;
+      text-align: center;
+      display: block;
+      transition: all 0.3s ease;
+    }
+    #click:checked ~ ul{
+      left: 0;
+    }
+    nav ul li{
+      width: 100%;
+      margin: 40px 0;
+    }
+    nav ul li a{
+      width: 100%;
+      margin-left: -100%;
+      display: block;
+      font-size: 20px;
+      transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    #click:checked ~ ul li a{
+      margin-left: 0px;
+    }
+    nav ul li a.active,
+    nav ul li a:hover{
+      background: none;
+      color: #3B3B6B;
+    }
+  }
+/*** MEDIA QUERYES RESPONSIVE (END)****/
+
+body {
+  display: flex;
+  background-color: orange;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  width: 100%;
+  border: 3px dashed white;
+  margin:10px 200px 10px 200px;
+  background-color: aliceblue;
+}

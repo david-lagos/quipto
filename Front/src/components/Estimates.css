@@ -1,0 +1,35 @@
+.estimated {
+  border: 1px solid #02a7f0;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+}
+
+.estimated td:nth-child(1){
+    width: 35%;
+    margin: 9px;
+    line-height: normal;
+    font-size: 16px;
+    text-align: left;
+    color: #7f7f7f;
+    font-weight: 400;
+}
+
+.estimated td:nth-child(2) {
+  width: 60%;
+  margin: 9px;
+  text-align: justify;
+  float: right;
+}
+
+.yield {
+  color: #28347d;
+  margin-left: 20px;
+  text-align: justify;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.yield b {
+  color: #7f7f7f;
+}

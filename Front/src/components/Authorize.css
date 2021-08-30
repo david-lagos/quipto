@@ -1,0 +1,36 @@
+.aprove-buttons button {
+  margin: 9px;
+  margin-bottom: 4px;
+  margin-left: 65px;
+  width: 60%;
+  text-align: center;
+  box-shadow: inset 0px -3px 7px 0px #28347d;
+  background-color: #28347d;
+  border-radius: 5px;
+  border: 1px solid #124d77;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 13px;
+  padding: 10px 13px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #154682;
+}
+.aprove-buttons p {
+  width: 38%;
+  height: 48px;
+  text-align: center;
+  font-size: 10px;
+  margin: 9px;
+  margin-left: 100px;
+}
+
+.aprove-buttons button:hover {
+  background-color: #3b4bb6;
+  text-shadow: 0px 1px 0px #424c8d;
+}
+.aprove-buttons button:active {
+  position: relative;
+  top: 1px;
+}
