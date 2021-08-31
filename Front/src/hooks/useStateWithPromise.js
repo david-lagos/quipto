@@ -1,6 +1,6 @@
 import {useEffect, useCallback, useRef, useState } from "react";
-const useStateWithPromise = (initialStake) => {
-    const [selection, setSelection] = useState(initialStake);
+const useStateWithPromise = (initialState) => {
+    const [selection, setSelection] = useState(initialState);
     const resolverRef = useRef(null);
 
     useEffect(() => {

@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Deals from "./deals";
 import Investments from "./Investments";
 import MainChart from "./mainChart";
 import useStateWithPromise from "../hooks/useStateWithPromise";
 import ApexCharts from "apexcharts";
+
 function Home(props) {
   let today = new Date();
   let aWeekAgo = new Date();
@@ -65,8 +66,8 @@ function Home(props) {
 
   const [selection, setSelection] = useStateWithPromise("one_week");
 
-  const updateData = () => {
-    switch (selection) {
+  const updateData = (option) => {
+    switch (option) {
       case "one_week":
         ApexCharts.exec(
           "area-datetime",
@@ -74,7 +75,6 @@ function Home(props) {
           new Date(aWeekAgo).getTime(),
           new Date().getTime()
         );
-        console.log(selection);
         break;
       case "one_month":
         ApexCharts.exec(
@@ -83,8 +83,6 @@ function Home(props) {
           new Date(firstDay).getTime(),
           new Date(lastDay).getTime()
         );
-        console.log(selection);
-
         break;
       case "one_year":
         ApexCharts.exec(
@@ -93,8 +91,6 @@ function Home(props) {
           new Date(firstOfYear).getTime(),
           new Date(lastOfYear).getTime()
         );
-        console.log(selection);
-
         break;
       case "all":
         ApexCharts.exec(
@@ -103,8 +99,6 @@ function Home(props) {
           new Date("18 May 2020").getTime(),
           new Date().getTime()
         );
-        console.log(selection);
-
         break;
       default:
     }
@@ -128,10 +122,12 @@ function Home(props) {
               <button
                 id="one_week"
                 onClick={() => {
-                  setSelection("one_week").then(() => updateData());
-                  setTitle("7 Days");
+                  setSelection("one_week").then((option) => {
+                    updateData(option);
+                    setTitle("7 Days");
+                  });                  
                 }}
-                className={selection === "one_week" ? "active" : ""}
+                //className={selection === "one_week" ? "active" : ""}
               >
                 1W
               </button>
@@ -139,8 +135,10 @@ function Home(props) {
               <button
                 id="one_month"
                 onClick={() => {
-                  setSelection("one_month").then(() => updateData());
-                  setTitle("1 Month");
+                  setSelection("one_month").then((option) => {
+                    updateData(option);
+                    setTitle("1 Month");
+                  });
                 }}
                 className={selection === "one_month" ? "active" : ""}
               >
@@ -150,8 +148,10 @@ function Home(props) {
               <button
                 id="one_year"
                 onClick={() => {
-                  setSelection("one_year").then(() => updateData());
-                  setTitle("One Year");
+                  setSelection("one_year").then((option) => {
+                    updateData(option);
+                    setTitle("One Year");
+                });
                 }}
                 className={selection === "one_year" ? "active" : ""}
               >
@@ -161,8 +161,10 @@ function Home(props) {
               <button
                 id="all"
                 onClick={() => {
-                  setSelection("all").then(() => updateData());
-                  setTitle("All Times");
+                  setSelection("all").then((option) => {
+                    updateData(option);
+                    setTitle("All Times");
+                });
                 }}
                 className={selection === "all" ? "active" : ""}
               >
