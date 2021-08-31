@@ -72,7 +72,7 @@ const connect = async() => {
 
 const getInvestments = async(address) => {
   
-  const positions = await GetPoolData.getPositions(address);
+  const positions = await GetPoolData.getPositions('0x8e2e83cd7666a00e8c32bb1edb1886a778544c83');
   //console.log(positions);
   const arrDeals = [];
   

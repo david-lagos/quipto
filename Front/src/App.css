@@ -327,10 +327,11 @@ input[type="checkbox"] {
   grid-column-end: last-column;
   grid-row-start: first-row;
   grid-row-end: growth-row;
+  /* border: 2px dashed pink; */
 }
 
 #home_filter {
-  border: none;
+  /* border: 2px dashed pink; */
   outline: none;
   background-color: #f2f2f2;
   color: #7f7f7f;
@@ -547,7 +548,6 @@ input[type="checkbox"] {
 .table th {
   color: #7f7f7f;
   border: none;
-  
 }
 
 .table th {
@@ -561,7 +561,6 @@ input[type="checkbox"] {
   /* width: 110px; */
   text-align: left;
   /* border: 1px dashed pink; */
-  
 }
 
 .table th:nth-child(2) {
@@ -572,7 +571,7 @@ input[type="checkbox"] {
   width: 125px;
 }
 
-.table td:nth-child(1){
+.table td:nth-child(1) {
   color: #28347d;
   /* border: 1px dashed pink; */
 
@@ -642,7 +641,7 @@ input[type="checkbox"] {
   top: 1px;
 }
 
-.eye-button{
+.eye-button {
   cursor: pointer;
   background-color: transparent;
   border: none;

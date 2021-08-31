@@ -1,28 +1,17 @@
 import "./mainChart.css";
 import React, { useEffect, useState } from "react";
-import ApexCharts from "apexcharts";
+// import ApexCharts from "apexcharts";
 import ReactApexChart from "react-apexcharts";
 
 function MainChart(props) {
-
-  const {
-    portfolio,
-    option
-  } = props
+  const { portfolio } = props;
 
   let today = new Date();
   let aWeekAgo = new Date();
   aWeekAgo.setDate(today.getDate() - 7);
-  var firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
-  var lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0 );
-  var firstOfYear = new Date(today.getFullYear(), 1, 1);
-  var lastOfYear = new Date(today.getFullYear(), 12, 31);
-  
-  const [series, setSeries] = useState([
-    { name: "yield",
-      data: [],
-    }]);
-  
+
+  const [series, setSeries] = useState([{ name: "yield", data: [] }]);
+
   const [options, setObject] = useState({
     chart: {
       id: "area-datetime",
@@ -113,114 +102,42 @@ function MainChart(props) {
         stops: [0, 100],
       },
     },
-  })
-  const [selection, setSelection] = useState('one_month')
+  });
+  // const [selection, setSelection] = useState("one_month");
+
+  // const [title, setTitle] = useState("7 Days");
 
   useEffect(() => {
     setTimeout(() => {
-      if(portfolio.length > 0){
-      setSeries([{
-        data: portfolio[0].apexData.data
-      }]);
+      if (portfolio.length > 0) {
+        setSeries([
+          {
+            data: portfolio[0].apexData.data,
+          },
+        ]);
       }
-    }, 0)
-    
-
+    }, 0);
   }, [portfolio]);
 
-  const updateData = (timeline) => {
-    setSelection(timeline)
-    switch (selection) {
-      case "one_week":
-        ApexCharts.exec(
-          "area-datetime",
-          "zoomX",
-          new Date(aWeekAgo).getTime(),
-          new Date().getTime()
-        );
-        break;
-      case "one_month":
-        ApexCharts.exec(
-          "area-datetime",
-          "zoomX",
-          new Date(firstDay).getTime(),
-          new Date(lastDay).getTime()
-        );
-        break;
-      case "one_year":
-        ApexCharts.exec(
-          "area-datetime",
-          "zoomX",
-          new Date(firstOfYear).getTime(),
-          new Date(lastOfYear).getTime()
-        );
-        break;
-      case "all":
-        ApexCharts.exec(
-          "area-datetime",
-          "zoomX",
-          new Date("18 May 2020").getTime(),
-          new Date().getTime()
-        );
-        break;
-      default:
-    }
-  }
+  // const [selection, setSelection] = useState("one_month");
 
-  if(option === 0){
-    updateData("all");
-  } else if(option === 1){
-    console.log('one week');
-    updateData("one_week");
-  }
+  // console.log(option);
 
   return (
-      <div id="chart">
-        <div class="toolbar">
-          <button
-            id="one_week"
-            onClick={() => updateData("one_week")}
-            className={selection === "one_week" ? "active" : ""}
-          >
-            1W
-          </button>
-          &nbsp;
-          <button
-            id="one_month"
-            onClick={() => updateData("one_month")}
-            className={selection === "one_month" ? "active" : ""}
-          >
-            1M
-          </button>
-          &nbsp;
-          <button
-            id="one_year"
-            onClick={() => updateData("one_year")}
-            className={selection === "one_year" ? "active" : ""}
-          >
-            1Y
-          </button>
-          &nbsp;
-          <button
-            id="all"
-            onClick={() => updateData("all")}
-            className={selection === "all" ? "active" : ""}
-          >
-            ALL
-          </button>
-        </div>
+    <div id="chart">
+      <div class="toolbar"></div>
 
-        <div id="chart-timeline">
-          <ReactApexChart
-            options={options}
-            series={series}
-            type="area"
-            width={"100%"}
-            height={280}
-          />
-        </div>
+      <div id="chart-timeline">
+        <ReactApexChart
+          options={options}
+          series={series}
+          type="area"
+          width={"100%"}
+          height={280}
+        />
       </div>
-    );
-  }
+    </div>
+  );
+}
 
 export default MainChart;
