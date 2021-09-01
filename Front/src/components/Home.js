@@ -5,6 +5,7 @@ import Investments from "./Investments";
 import MainChart from "./mainChart";
 import useStateWithPromise from "../hooks/useStateWithPromise";
 import ApexCharts from "apexcharts";
+import AccountBoxes from './AccountBoxes';
 
 function Home(props) {
   let today = new Date();
@@ -17,6 +18,29 @@ function Home(props) {
   const { isLoggedIn, portfolio } = props;
 
   const [deals, setDeals] = useState([]);
+  
+
+  const arr = [
+    {
+      value: '500',
+      growth: '2%'      
+    },
+    {
+      value: '1000',
+      growth: '4%'
+    },
+    {
+      value: '2000',
+      growth: '8%'
+    },
+    {
+      value: '4000',
+      growth: '16%'
+    }
+  ]
+
+  const [value, setValue] = useState(arr[0].value);
+  const [growth, setGrowth] = useState(arr[0].growth);
 
   useEffect(() => {
     axios
@@ -125,6 +149,8 @@ function Home(props) {
                   setSelection("one_week").then((option) => {
                     updateData(option);
                     setTitle("7 Days");
+                    setValue(arr[0].value);
+                    setGrowth(arr[0].growth)
                   });                  
                 }}
                 //className={selection === "one_week" ? "active" : ""}
@@ -138,6 +164,8 @@ function Home(props) {
                   setSelection("one_month").then((option) => {
                     updateData(option);
                     setTitle("1 Month");
+                    setValue(arr[1].value);
+                    setGrowth(arr[1].growth);
                   });
                 }}
                 className={selection === "one_month" ? "active" : ""}
@@ -151,6 +179,8 @@ function Home(props) {
                   setSelection("one_year").then((option) => {
                     updateData(option);
                     setTitle("One Year");
+                    setValue(arr[2].value);
+                    setGrowth(arr[2].growth);
                 });
                 }}
                 className={selection === "one_year" ? "active" : ""}
@@ -164,6 +194,8 @@ function Home(props) {
                   setSelection("all").then((option) => {
                     updateData(option);
                     setTitle("All Times");
+                    setValue(arr[3].value);
+                    setGrowth(arr[3].growth);
                 });
                 }}
                 className={selection === "all" ? "active" : ""}
@@ -174,12 +206,15 @@ function Home(props) {
           </div>
         </div>
         <div class="growth-info">
-          <h1>$1.3T</h1>
-          <p>Total Crypto Market Cap</p>
-          <h1>+17%</h1>
-          <p>Portfolio Growth</p>
-          <h1>+$18K</h1>
-          <p>Portfolio Value</p>
+          { isLoggedIn ? 
+          (<div>
+            <AccountBoxes value={'$1.3T'} title={'Total Market Crypto Cap'}/>
+            <AccountBoxes value={growth} title={'Portfolio Growth'}/>
+            <AccountBoxes value={value} title={'Portfolio Value'}/>
+          </div>) :
+          (<div>
+            <AccountBoxes value={'$1.3T'} title={'Total Market Crypto Cap'}/>
+          </div>)}
         </div>
         <div class="graphs-growth">
           <div class="graph-1">
