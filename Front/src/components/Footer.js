@@ -4,7 +4,7 @@ import React from 'react';
 function Footer() {
     return (
         <footer>
-        <div class="links">
+        <div className="links">
           <ul>
             <li>
               <a href="http://" target="_blank" rel="noopener noreferrer"
@@ -29,9 +29,9 @@ function Footer() {
           </ul>
         </div>
   
-        <div class="social-parent">
-          <div class="social">
-            <ul class="list-unstyled">
+        <div className="social-parent">
+          <div className="social">
+            <ul className="list-unstyled">
               <li>
                 <a href="#!"
                   ><svg
@@ -39,7 +39,7 @@ function Footer() {
                     width="30"
                     height="30"
                     fill="currentColor"
-                    class="bi bi-facebook"
+                    className="bi bi-facebook"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -54,7 +54,7 @@ function Footer() {
                     width="30"
                     height="30"
                     fill="currentColor"
-                    class="bi bi-telegram"
+                    className="bi bi-telegram"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -69,7 +69,7 @@ function Footer() {
                     width="30"
                     height="30"
                     fill="currentColor"
-                    class="bi bi-youtube"
+                    className="bi bi-youtube"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -84,7 +84,7 @@ function Footer() {
                     width="30"
                     height="30"
                     fill="currentColor"
-                    class="bi bi-twitter"
+                    className="bi bi-twitter"
                     viewBox="0 0 16 16"
                   >
                     <path
@@ -96,7 +96,7 @@ function Footer() {
           </div>
         </div>
         {/* <!-- Copyright --> */}
-        <div class="footer-copyright text-center py-3">
+        <div className="footer-copyright text-center py-3">
           <p>© 2022 Brick Lane LLC</p>
         </div>
         {/* <!-- Copyright --> */}

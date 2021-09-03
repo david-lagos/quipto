@@ -17,8 +17,8 @@ const Investments = ({
   
   return (
     <div>
-        <div class="rectangle">
-          <table class="table">
+        <div className="rectangle">
+          <table className="table">
             <tbody>
               <tr>
                 <th>Pair</th>
@@ -35,7 +35,7 @@ const Investments = ({
                   */}
                   <button onClick={openInvestmentModal} className="eye-button">
                     <svg
-                      class="eye-button"
+                      className="eye-button"
                       version="1.1"
                       xmlnsXlink="http://www.w3.org/1999/xlink"
                       width="17px"

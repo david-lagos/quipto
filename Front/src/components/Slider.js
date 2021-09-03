@@ -29,7 +29,7 @@ const Slider = () => {
                 return (
                   <div>
                     {coin.symbol === "btc" ? (
-                      <div className="stock">
+                      <div className="stock" key={index}>
                         <div className="coin-image">
                           <img src={coin.image} alt="logo" />
                         </div>
@@ -55,7 +55,7 @@ const Slider = () => {
                                   width="10"
                                   height="10"
                                   fill="currentColor"
-                                  class="bi bi-caret-up-fill"
+                                  className="bi bi-caret-up-fill"
                                   viewBox="0 0 16 16"
                                 >
                                   <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
@@ -85,7 +85,7 @@ const Slider = () => {
                 return (
                   <div>
                     {coin.symbol === "eth" ? (
-                      <div className="stock">
+                      <div className="stock" key={index}>
                         <div className="coin-image">
                           <img src={coin.image} alt="logo" />
                         </div>
@@ -111,7 +111,7 @@ const Slider = () => {
                                   width="10"
                                   height="10"
                                   fill="currentColor"
-                                  class="bi bi-caret-up-fill"
+                                  className="bi bi-caret-up-fill"
                                   viewBox="0 0 16 16"
                                 >
                                   <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
@@ -141,7 +141,7 @@ const Slider = () => {
                 return (
                   <div>
                     {coin.symbol === "usdt" ? (
-                      <div className="stock">
+                      <div className="stock" key={index}>
                         <div className="coin-image">
                           <img src={coin.image} alt="logo" />
                         </div>
@@ -164,7 +164,7 @@ const Slider = () => {
                                   width="10"
                                   height="10"
                                   fill="currentColor"
-                                  class="bi bi-caret-up-fill"
+                                  className="bi bi-caret-up-fill"
                                   viewBox="0 0 16 16"
                                 >
                                   <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
@@ -194,7 +194,7 @@ const Slider = () => {
                 return (
                   <div>
                     {coin.symbol === "bnb" ? (
-                      <div className="stock">
+                      <div className="stock" key={index}>
                         <div className="coin-image">
                           <img src={coin.image} alt="logo" />
                         </div>
@@ -220,7 +220,7 @@ const Slider = () => {
                                   width="10"
                                   height="10"
                                   fill="currentColor"
-                                  class="bi bi-caret-up-fill"
+                                  className="bi bi-caret-up-fill"
                                   viewBox="0 0 16 16"
                                 >
                                   <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
@@ -250,7 +250,7 @@ const Slider = () => {
                 return (
                   <div>
                     {coin.symbol === "ada" ? (
-                      <div className="stock">
+                      <div className="stock" key={index}>
                         <div className="coin-image">
                           <img src={coin.image} alt="logo" />
                         </div>
@@ -276,7 +276,7 @@ const Slider = () => {
                                   width="10"
                                   height="10"
                                   fill="currentColor"
-                                  class="bi bi-caret-up-fill"
+                                  className="bi bi-caret-up-fill"
                                   viewBox="0 0 16 16"
                                 >
                                   <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
@@ -307,7 +307,7 @@ const Slider = () => {
                 return (
                   <div>
                     {coin.symbol === "btc" ? (
-                      <div className="stock">
+                      <div className="stock" key={index}>
                         <div className="coin-image">
                           <img src={coin.image} alt="logo" />
                         </div>
@@ -333,7 +333,7 @@ const Slider = () => {
                                   width="10"
                                   height="10"
                                   fill="currentColor"
-                                  class="bi bi-caret-up-fill"
+                                  className="bi bi-caret-up-fill"
                                   viewBox="0 0 16 16"
                                 >
                                   <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
@@ -363,7 +363,7 @@ const Slider = () => {
                 return (
                   <div>
                     {coin.symbol === "eth" ? (
-                      <div className="stock">
+                      <div className="stock" key={index}>
                         <div className="coin-image">
                           <img src={coin.image} alt="logo" />
                         </div>
@@ -389,7 +389,7 @@ const Slider = () => {
                                   width="10"
                                   height="10"
                                   fill="currentColor"
-                                  class="bi bi-caret-up-fill"
+                                  className="bi bi-caret-up-fill"
                                   viewBox="0 0 16 16"
                                 >
                                   <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
@@ -419,7 +419,7 @@ const Slider = () => {
                 return (
                   <div>
                     {coin.symbol === "usdt" ? (
-                      <div className="stock">
+                      <div className="stock" key={index}>
                         <div className="coin-image">
                           <img src={coin.image} alt="logo" />
                         </div>
@@ -442,7 +442,7 @@ const Slider = () => {
                                   width="10"
                                   height="10"
                                   fill="currentColor"
-                                  class="bi bi-caret-up-fill"
+                                  className="bi bi-caret-up-fill"
                                   viewBox="0 0 16 16"
                                 >
                                   <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
@@ -472,7 +472,7 @@ const Slider = () => {
                 return (
                   <div>
                     {coin.symbol === "bnb" ? (
-                      <div className="stock">
+                      <div className="stock" key={index}>
                         <div className="coin-image">
                           <img src={coin.image} alt="logo" />
                         </div>
@@ -499,7 +499,7 @@ const Slider = () => {
                                   width="10"
                                   height="10"
                                   fill="currentColor"
-                                  class="bi bi-caret-up-fill"
+                                  className="bi bi-caret-up-fill"
                                   viewBox="0 0 16 16"
                                 >
                                   <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
@@ -529,7 +529,7 @@ const Slider = () => {
                 return (
                   <div>
                     {coin.symbol === "ada" ? (
-                      <div className="stock">
+                      <div className="stock" key={index}>
                         <div className="coin-image">
                           <img src={coin.image} alt="logo" />
                         </div>
@@ -556,7 +556,7 @@ const Slider = () => {
                                   width="10"
                                   height="10"
                                   fill="currentColor"
-                                  class="bi bi-caret-up-fill"
+                                  className="bi bi-caret-up-fill"
                                   viewBox="0 0 16 16"
                                 >
                                   <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />

@@ -21,8 +21,8 @@ const Deals = ({
   return (
     <div className="coin-container">
       <div className="coin">
-        <div class="rectangle rectangle-top">
-          <table class="table top">
+        <div className="rectangle rectangle-top">
+          <table className="table top">
             <tbody>
               <tr>
                 <th>Pair</th>
@@ -58,7 +58,7 @@ const Deals = ({
                       width="26"
                       height="26"
                       fill="currentColor"
-                      class="bi bi-graph-up"
+                      className="bi bi-graph-up"
                       viewBox="0 0 16 16"
                     >
                       <path

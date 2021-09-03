@@ -10,14 +10,14 @@ function Header (props) {
     return (
         <header>
         <nav>
-          <div class="logo">
+          <div className="logo">
             <a href="index.html"
               ><img src="img/Original on Transparent.png" alt="Logo"
             /></a>
           </div>
           <input type="checkbox" id="click" />
-          <label for="click" class="menu-btn">
-            <i class="fas fa-bars"></i>
+          <label for="click" className="menu-btn">
+            <i className="fas fa-bars"></i>
           </label>
           <ul>
             <li><a href="index.html">Home</a></li>
@@ -26,7 +26,7 @@ function Header (props) {
             <li>
               <a href="configuration">
                 <svg
-                class="gear"
+                className="gear"
                   version="1.1"
                   xmlnsXlink="http://www.w3.org/1999/xlink"
                   width="28px"

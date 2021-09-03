@@ -347,20 +347,29 @@ input[type="checkbox"] {
   grid-row-start: growth-row;
   grid-row-end: last-row;
   text-align: center;
-  /* border:3px dashed pink;*/
+  /* border:3px dashed pink; */
 }
 
 .growth-info h1 {
   font-size: 42px;
-  color: #4d4d4d;
-  margin-top: 10px;
+  /* color: #4d4d4d; */
+  margin-top: 20px;
+
+  animation-name: title;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
 }
 
 .growth-info p {
   font-size: 17px;
-  margin-top: 10px;
-  color: #7f7f7f;
+  margin-top: 15px;
+  /* color: #f2f2f2; */
   font-family: Helvetica, sans-serif;
+  /* border:3px dashed pink; */
+  position: relative;
+  animation-name: subtitle;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
 }
 
 .graphs-growth {
@@ -391,10 +400,58 @@ input[type="checkbox"] {
   margin-bottom: 10px;
 }
 
-.graph-1 img {
-  margin-top: 20px;
-  width: 80%;
-  height: auto;
+.boxes-container {
+  /* border: 1px dashed pink; */
+  height: 300px;
+  left: 0;
+  align-items: flex-start;
+  justify-items: flex-start;
+}
+.cap-center {
+  position: relative;
+  animation-name: capcenter;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes capcenter{
+  from {
+    top:0px;
+  }
+  to {
+    top: 100px;
+  }
+}
+@keyframes title {
+  from {
+    color: #f2f2f2;
+  }
+  to {
+    color: #4d4d4d;
+  }
+}
+
+@keyframes subtitle {
+  0% {
+    color: #f2f2f2;
+  }
+  25% {
+    color: #f2f2f2;
+    animation-fill-mode: ease;
+  }
+  50% {
+    background-color: transparent;
+    color: #7f7f7f;
+  }
+  75% {
+    background-color: transparent;
+    color: #7f7f7f;
+  }
+  100% {
+    background-color: transparent;
+    color: #7f7f7f;
+  }
 }
 
 /**********MY ACCOUNT STYLES (END)************/

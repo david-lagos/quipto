@@ -125,7 +125,7 @@ function MainChart(props) {
 
   return (
     <div id="chart">
-      <div class="toolbar"></div>
+      <div className="toolbar"></div>
 
       <div id="chart-timeline">
         <ReactApexChart
