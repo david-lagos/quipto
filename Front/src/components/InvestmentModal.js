@@ -150,13 +150,13 @@ const InvestmentModal = ({
                   <stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
                 </linearGradient>
               </defs>
-              <XAxis dataKey="date" height={40} tick={<CustomizedAxisTick />}/>
-              <YAxis dataKey="yield" />
+              <XAxis dataKey="timestamp" height={40} tick={<CustomizedAxisTick />}/>
+              <YAxis dataKey="feesUSD" />
               {/* <CartesianGrid strokeDasharray="3 3" /> */}
               <Tooltip />
               <Area
                 type="monotone"
-                dataKey="yield"
+                dataKey="feesUSD"
                 stroke="#82ca9d"
                 fillOpacity={1}
                 fill="url(#colorPv)"

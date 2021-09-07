@@ -31,7 +31,7 @@ const getPositions = async(address) => {
     return result.data.data.users[0].liquidityPositions;
 }
 
-const getSnapshot = async(position) => {
+const getSnapshots = async(position, poolKey) => {
 
     const result = await axios.post('https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2',
     {
@@ -42,34 +42,47 @@ const getSnapshot = async(position) => {
                 liquidityTokenBalance
                 liquidityTokenTotalSupply
                 reserve0
-                reserve1        
+                reserve1
+                reserveUSD
+                token0PriceUSD
+                token1PriceUSD
+            }
+            pairs(where: {id: "${poolKey}"}){
+                id
+                token0{
+                    id
+                    symbol
+                }
+                token1{
+                    id
+                    symbol
+                }
             }
         }`
     });
 
-    return result.data.data.liquidityPositionSnapshots[0];
+    return result.data.data;
 }
 
-const getHistoricalData = async(poolKey, time, date) => {
+const getHistoricalData = async(poolKey, time, date, tk0, tk1) => {
+
+    let firstDay = new Date(time * 1000);
+    firstDay.setUTCHours(0,0,0);
+    firstDay = Math.floor(firstDay / 1000);
 
     const result = await axios.post('https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2',
     {
         query:`
         {
-            pairDayDatas(where: {pairAddress: "${poolKey}" date_gte: ${date}} orderBy: date orderDirection: desc){
+            pairDayDatas(first: 1000 where: {pairAddress: "${poolKey}" date_gte: ${date}} orderBy: date orderDirection: asc){
                 date
                 dailyVolumeUSD
-            }
-            pairs(where:{id: "${poolKey}"}){
-              token0{
-                symbol
-              }
-              token1{
-                symbol
-              }
-              reserve0
-              reserve1
-              totalSupply
+                dailyVolumeToken0
+                dailyVolumeToken1
+                totalSupply
+                reserveUSD
+                reserve0
+                reserve1
             }
             bundles(first: 1){
                 ethPrice
@@ -77,11 +90,20 @@ const getHistoricalData = async(poolKey, time, date) => {
             swaps(first: 1000 where:{timestamp_gte: ${time} timestamp_lt: ${date} pair: "${poolKey}"} orderBy: timestamp orderDirection: asc){
                 amountUSD
                 timestamp
-                }
+                amount0In
+                amount1In
+            }
+            tokenDayDatas(first: 1000 where: {token_in: ["${tk0}", "${tk1}"] date_gte: ${firstDay}} orderBy: date orderDirection: asc){
+               token{
+                   symbol
+               }
+               date
+               priceUSD
+            }
         }`
     });
     
     return result.data.data;
 }
 
-module.exports = { getPriceData, getPositions, getSnapshot, getHistoricalData }
+module.exports = { getPriceData, getPositions, getSnapshots, getHistoricalData }

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import ReactApexChart from "react-apexcharts";
 
 function MainChart(props) {
-  const { portfolio } = props;
+  const { portfolio, mainChartData } = props;
 
   let today = new Date();
   let aWeekAgo = new Date();
@@ -112,12 +112,12 @@ function MainChart(props) {
       if (portfolio.length > 0) {
         setSeries([
           {
-            data: portfolio[0].apexData.data,
+            data: mainChartData,
           },
         ]);
       }
     }, 0);
-  }, [portfolio]);
+  }, [portfolio, mainChartData]);
 
   // const [selection, setSelection] = useState("one_month");
 
